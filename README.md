@@ -1,0 +1,5 @@
+# sabersearch Plugin
+
+```
+{{sabersearch>URL}}
+```
