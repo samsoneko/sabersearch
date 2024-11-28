@@ -4,4 +4,4 @@ email  caesaranton700@yahoo.de
 date   2024-11-22
 name   sabersearch plugin
 desc   Crosssearch Dokuwiki Pages.
-url    none
+url    https://github.com/samsoneko/sabersearch
