@@ -16,9 +16,7 @@ class action_plugin_sabersearch extends DokuWiki_Action_Plugin {
      * Register its handlers with the DokuWiki's event controller
      */
     public function register(Doku_Event_Handler $controller) {
-        // $controller->register_hook('SEARCH_QUERY_FULLPAGE', 'AFTER', 
-        //                            $this, 'crossSearch');
-        $controller->register_hook('SEARCH_QUERY_PAGELOOKUP', 'AFTER', $this, 'crossSearch');
+        $controller->register_hook('SEARCH_QUERY_FULLPAGE', 'AFTER', $this, 'crossSearch');
         $controller->register_hook('TPL_CONTENT_DISPLAY', 'BEFORE', $this, 'addResults');
     }
  
@@ -27,7 +25,7 @@ class action_plugin_sabersearch extends DokuWiki_Action_Plugin {
      */
     public function crossSearch(Doku_Event $event) {
         if ($this->getConf('enable') == 1) {
-            $prompt = $event->data['id'];
+            $prompt = $event->data['query'];
             $time = $event->data['after'];
             $this->prompturl = $this->prepareBaseURL($prompt); // Prepares the url from the configuration for the search prompt
 
